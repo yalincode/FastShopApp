@@ -1,0 +1,161 @@
+﻿@model ProductCreateVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+    <title>SB Admin 2 - Tables</title>
+
+
+
+    <!-- Custom fonts for this template -->
+    <link href="~/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+
+
+    <!-- Custom styles for this template -->
+    <link href="~/admin/css/sb-admin-2.min.css" rel="stylesheet">
+
+
+
+    <!-- Custom styles for this page -->
+    <link href="~/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+
+
+</head>
+
+
+
+<body id="page-top">
+
+
+    <h3>Ürün Ekleme Sayfası</h3>
+    <br />
+    <form asp-action="ProductCreate" asp-controller="Product" method="post" class="form-group ">
+        <div class="col-md-12 form-group">
+            <div class="col-md-6 form-group">
+                <label for="name" class="form-label">Ürün İsmi</label>
+                <input type="text" asp-for="@Model.ProductName" class="form-control" id="name" placeholder="Paket ismini buraya yazın">
+                @Html.ValidationMessageFor(x=>x.ProductName,"" ,new {@class="text-danger"})
+            </div>
+            <div class="col-md-6 form-group">
+                <label for="name" class="form-label">Kategori İsmi</label>
+                <input type="text" asp-for="@Model.CategoryName" class="form-control" id="name" placeholder="Paket ismini buraya yazın">
+                @Html.ValidationMessageFor(x=>x.CategoryName,"" ,new {@class="text-danger"})
+            </div>
+
+            <div class="col-md-6 form-group">
+                <label for="name" class="form-label">Marka İsmi</label>
+                <input type="text" asp-for="@Model.BrandName" class="form-control" id="name" placeholder="Paket ismini buraya yazın">
+                @Html.ValidationMessageFor(x=>x.BrandName,"" ,new {@class="text-danger"})
+            </div>
+
+
+            <div class="col-md-6 form-group">
+                <div class="form-group">
+                    <label class="sr-only" for="exampleInputAmount">Fiyat</label>
+                    <div class="input-group">
+                        <span class="input-group-text">TRY</span>
+                        <input asp-for="@Model.UnitPrice" type="number" min="0.00" step="0.05" value="1.00" id="exampleInputAmount" class="form-control currency" placeholder="Price">
+                    </div>
+                    @Html.ValidationMessageFor(x=>x.UnitPrice,"" ,new {@class="text-danger"})
+                </div>
+            </div>
+            <div class="col-md-6 form-group">
+                <div class="form-group">
+                    <label class="sr-only" for="exampleInputAmount">Genişlik</label>
+                    <div class="input-group">
+                        <span class="input-group-text">CM</span>
+                        <input asp-for="@Model.Width" type="number" min="0.00" step="0.05" value="1.00" id="exampleInputAmount" class="form-control currency" placeholder="Price">
+                    </div>
+                    @Html.ValidationMessageFor(x=>x.Width,"" ,new {@class="text-danger"})
+                </div>
+            </div>
+            <div class="col-md-6 form-group">
+                <div class="form-group">
+                    <label class="sr-only" for="exampleInputAmount">Yükseklik</label>
+                    <div class="input-group">
+                        <span class="input-group-text">CM</span>
+                        <input asp-for="@Model.Height" type="number" min="0.00" step="0.05" value="1.00" id="exampleInputAmount" class="form-control currency" placeholder="Price">
+                    </div>
+                    @Html.ValidationMessageFor(x=>x.Height,"" ,new {@class="text-danger"})
+                </div>
+            </div>
+            <div class="col-md-6 form-group">
+                <button type="submit" class="btn btn-primary btn-lg col-md-12" id="btn">Yeni Paket Ekle</button>
+                <br />
+                <br />
+                <div class="d-grid gap-2 col-4 mx-auto">
+            <a href="/Product/ProductList/" class="btn btn-primary col-11"><b>Geri Dön</b></a>
+        </div>
+            </div>
+            
+        </div>
+    </form>
+    <br />
+    
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/admin/vendor/jquery/jquery.min.js"></script>
+    <script src="~/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/admin/js/sb-admin-2.min.js"></script>
+
+
+
+    <!-- Page level plugins -->
+    <script src="~/admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+
+
+    <!-- Page level custom scripts -->
+    <script src="~/admin/js/demo/datatables-demo.js"></script>
+
+
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+</body>
+
+
+
+</html>
+
